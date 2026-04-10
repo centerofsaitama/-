@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>河口湖北岸の桜・温泉・下道プラン</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #222;
+      --muted: #666;
+      --line: #dfe3ea;
+      --accent: #0b57d0;
+      --soft: #eef6ff;
+      --soft2: #fff7e8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      line-height: 1.3;
+    }
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 24px;
+    }
+    p { margin: 0 0 12px; }
+    .lead { color: var(--muted); }
+    .note, .topcard, .card {
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 3px 14px rgba(0,0,0,.06);
+      padding: 18px;
+    }
+    .note {
+      background: var(--soft2);
+      border: 1px solid #f0d799;
+      margin: 18px 0 22px;
+    }
+    .topcard { margin-top: 18px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .chip {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: #edf2ff;
+      color: #1849a9;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .accordion { margin-top: 12px; }
+    .acc-item {
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 3px 14px rgba(0,0,0,.06);
+      margin: 14px 0;
+      overflow: hidden;
+    }
+    .acc-button {
+      width: 100%;
+      border: 0;
+      background: #fff;
+      cursor: pointer;
+      text-align: left;
+      padding: 18px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      font: inherit;
+    }
+    .acc-title {
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+    .acc-sub {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+      margin-top: 4px;
+    }
+    .arrow {
+      flex: 0 0 auto;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: #eef3fb;
+      display: grid;
+      place-items: center;
+      transition: transform .2s ease;
+      font-size: 18px;
+    }
+    .acc-item.open .arrow { transform: rotate(180deg); }
+    .acc-panel {
+      display: none;
+      padding: 0 18px 18px;
+      border-top: 1px solid var(--line);
+    }
+    .acc-item.open .acc-panel { display: block; }
+    .grid {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 10px 16px;
+      margin-top: 14px;
+    }
+    .label { color: var(--muted); font-weight: 800; }
+    .plan {
+      margin-top: 16px;
+      background: var(--soft);
+      border: 1px solid #c9dcff;
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .route {
+      margin-top: 16px;
+      background: #f9fbff;
+      border: 1px solid #dce7fb;
+      border-radius: 12px;
+      padding: 14px;
+    }
+    ol, ul { margin: 8px 0 0 20px; }
+    a { color: var(--accent); }
+    .small { color: var(--muted); font-size: 13px; }
+    .footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    @media (max-width: 760px) {
+      .grid { grid-template-columns: 1fr; }
+      .acc-title { font-size: 18px; }
+      h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>河口湖北岸の桜・温泉・下道プラン</h1>
+    <p class="lead">河口湖北岸のさくら祭りを歩いて、帰りに日帰り温泉へ寄る前提でまとめた、見比べやすいHTMLです。各項目はタップで開閉できます。</p>
+
+    <div class="note">
+      <strong>前提メモ</strong><br>
+      富士・河口湖さくら祭りの会場は <strong>河口湖北岸ウォーキングトレイル（河口湖円形ホール付近）</strong> です。2026年は <strong>3/28〜4/15</strong> の延長案内が出ていて、開催時間は <strong>10:00〜21:00</strong>、ライトアップは日没〜21:00です。<br>
+      西川口から河口湖駅方面の無料道路優先ルートは、目安で <strong>約3時間30分〜4時間</strong> です。土日は河口湖周辺と国道139号で上振れしやすいので、余裕を多めに見ています。
+    </div>
+
+    <div class="topcard">
+      <strong>今回の結論</strong><br>
+      迷ったら、<strong>河口湖北岸を14:30〜17:00ごろ散策 → ゆらりで入浴 → 夕食 → 帰宅</strong> がいちばん組みやすいです。
+      <div class="chips">
+        <span class="chip">おすすめ温泉：ゆらり</span>
+        <span class="chip">散策軸：円形ホール付近</span>
+        <span class="chip">下道前提で無理しにくい</span>
+      </div>
+    </div>
+
+    <h2>開いて見る</h2>
+    <div class="accordion">
+
+      <section class="acc-item open">
+        <button class="acc-button" type="button">
+          <span>
+            <span class="acc-title">西川口 10:00発・下道前提のおすすめ1日プラン</span>
+            <span class="acc-sub">到着は14時台想定。桜を先に見て、温泉で締める構成です。</span>
+          </span>
+          <span class="arrow">⌄</span>
+        </button>
+        <div class="acc-panel">
+          <div class="plan">
+            <strong>ざっくり時系列</strong>
+            <ol>
+              <li><strong>10:00</strong> 西川口を出発</li>
+              <li><strong>13:50〜14:30</strong> 河口湖周辺に到着見込み（無料道路優先だと約3時間30分〜4時間目安）</li>
+              <li><strong>14:30〜17:00</strong> 河口湖北岸さくら祭りを散策</li>
+              <li><strong>17:15〜18:45</strong> 日帰り温泉（第一候補：ゆらり）</li>
+              <li><strong>18:45〜19:30</strong> 館内または周辺で食事</li>
+              <li><strong>19:30ごろ</strong> 帰路へ</li>
+            </ol>
+          </div>
+
+          <div class="route">
+            <strong>この組み方がいい理由</strong>
+            <ul>
+              <li>10時発だと、先に温泉へ行くより<strong>桜を先に押さえる方が失敗しにくい</strong>です。</li>
+              <li>北岸は夕方にかけて光が柔らかく、写真も撮りやすいです。</li>
+              <li>散策後に温泉へ行くと、冷えや歩き疲れをそのまま回収できます。</li>
+            </ul>
+          </div>
+
+          <div class="route">
+            <strong>地図リンク</strong>
+            <ul>
+              <li><a href="https://www.google.com/maps/search/?api=1&query=%E6%B2%B3%E5%8F%A3%E6%B9%96%E5%86%86%E5%BD%A2%E3%83%9B%E3%83%BC%E3%83%AB" target="_blank" rel="noopener noreferrer">河口湖円形ホール</a></li>
+              <li><a href="https://www.google.com/maps/search/?api=1&query=%E6%B2%B3%E5%8F%A3%E6%B9%96%E5%8C%97%E5%B2%B8%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB" target="_blank" rel="noopener noreferrer">河口湖北岸ウォーキングトレイル</a></li>
+              <li><a href="https://www.google.com/maps/search/?api=1&query=%E5%AF%8C%E5%A3%AB%E7%9C%BA%E6%9C%9B%E3%81%AE%E6%B9%AF+%E3%82%86%E3%82%89%E3%82%8A" target="_blank" rel="noopener noreferrer">富士眺望の湯 ゆらり</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="acc-item">
+        <button class="acc-button" type="button">
+          <span>
+            <span class="acc-title">河口湖北岸 さくら祭りの散策おすすめルート</span>
+            <span class="acc-sub">歩きすぎず、景色を押さえやすい往復ベースです。</span>
+          </span>
+          <span class="arrow">⌄</span>
+        </button>
+        <div class="acc-panel">
+          <div class="plan">
+            <strong>おすすめルート（約60〜90分）</strong>
+            <ol>
+              <li><strong>河口湖円形ホール付近の会場に駐車・到着</strong></li>
+              <li><strong>北岸ウォーキングトレイルを湖沿いにゆっくり歩く</strong></li>
+              <li><strong>富士山が抜けて見える場所で写真</strong>を撮る</li>
+              <li>気に入った所で折り返して会場周辺へ戻る</li>
+              <li>屋台やクラフト市があれば最後に見る</li>
+            </ol>
+          </div>
+
+          <div class="route">
+            <strong>歩き方のコツ</strong>
+            <ul>
+              <li>北岸は「全部制覇」より、<strong>会場中心に片道15〜30分歩いて戻る</strong>方が満足度が高いです。</li>
+              <li>富士山が見えているなら、到着直後に先に写真を押さえるのがおすすめです。</li>
+              <li>ライトアップまで粘る場合は、温泉を先にせず、<strong>桜を見切ってから温泉</strong>の方が動線がきれいです。</li>
+            </ul>
+          </div>
+
+          <div class="route">
+            <strong>散策向きの人</strong>
+            <ul>
+              <li>歩きは軽めでいい</li>
+              <li>富士山・湖・桜の3点セットを撮りたい</li>
+              <li>祭り会場の雰囲気も拾いたい</li>
+            </ul>
+          </div>
+
+          <div class="route">
+            <strong>地図リンク</strong>
+            <ul>
+              <li><a href="https://www.google.com/maps/search/?api=1&query=%E6%B2%B3%E5%8F%A3%E6%B9%96%E5%8C%97%E5%B2%B8%E3%82%A6%E3%82%A9%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E3%83%88%E3%83%AC%E3%82%A4%E3%83%AB" target="_blank" rel="noopener noreferrer">北岸ウォーキングトレイルを見る</a></li>
+              <li><a href="https://www.google.com/maps/search/?api=1&query=%E6%B2%B3%E5%8F%A3%E6%B9%96%E5%86%86%E5%BD%A2%E3%83%9B%E3%83%BC%E3%83%AB" target="_blank" rel="noopener noreferrer">円形ホールを見る</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="acc-item">
+        <button class="acc-button" type="button">
+          <span>
+            <span class="acc-title">おすすめ日帰り温泉 3候補</span>
+            <span class="acc-sub">展開して比較できます。迷ったらゆらりです。</span>
+          </span>
+          <span class="arrow">⌄</span>
+        </button>
+        <div class="acc-panel">
+
+          <div class="card">
+            <strong>おすすめ1位：富士眺望の湯 ゆらり（鳴沢村）</strong>
+            <div class="grid">
+              <div class="label">特徴</div>
+              <div>河口湖から近く、富士山ビュー・露天・食事のバランスが良いです。今回の流れだと最も使いやすいです。</div>
+              <div class="label">向いてる人</div>
+              <div>外したくない、移動を増やしたくない、帰る前に整えたい人。</div>
+              <div class="label">営業時間</div>
+              <div>平日 10:00〜21:00（最終入館20:00）／土日祝 10:00〜22:00（最終入館21:00）</div>
+              <div class="label">料金</div>
+              <div>大人 平日1,400円／土日祝1,700円</div>
+              <div class="label">リンク</div>
+              <div><a href="https://www.fuji-yurari.jp/" target="_blank" rel="noopener noreferrer">公式サイト</a> ／ <a href="https://www.google.com/maps/search/?api=1&query=%E5%AF%8C%E5%A3%AB%E7%9C%BA%E6%9C%9B%E3%81%AE%E6%B9%AF+%E3%82%86%E3%82%89%E3%82%8A" target="_blank" rel="noopener noreferrer">Googleマップ</a></div>
+            </div>
+            <div class="plan"><strong>おすすめの入り方</strong><br>17:15ごろ入館 → 風呂 → 館内で軽く食事 → 19:30ごろ帰路。</div>
+          </div>
+
+          <div class="card">
+            <strong>おすすめ2位：ふじやま温泉（富士吉田）</strong>
+            <div class="grid">
+              <div class="label">特徴</div>
+              <div>帰り道で寄りやすい大型施設です。夜まで余裕があり、時間の自由度が高いです。</div>
+              <div class="label">向いてる人</div>
+              <div>帰路優先、遅めに動きたい、設備重視の人。</div>
+              <div class="label">営業時間</div>
+              <div>10:00〜23:00</div>
+              <div class="label">料金</div>
+              <div>大人 平日1,900円／土日祝2,300円（タオルレンタル込み）</div>
+              <div class="label">リンク</div>
+              <div><a href="https://www.fujiyamaonsen.jp/" target="_blank" rel="noopener noreferrer">公式サイト</a> ／ <a href="https://www.google.com/maps/search/?api=1&query=%E3%81%B5%E3%81%98%E3%82%84%E3%81%BE%E6%B8%A9%E6%B3%89" target="_blank" rel="noopener noreferrer">Googleマップ</a></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <strong>おすすめ3位：紅富士の湯（山中湖）</strong>
+            <div class="grid">
+              <div class="label">特徴</div>
+              <div>富士山の眺望を優先したいなら魅力があります。河口湖からは少し回り道です。</div>
+              <div class="label">向いてる人</div>
+              <div>景色最優先、山中湖も回りたい人。</div>
+              <div class="label">営業時間</div>
+              <div>平日 11:00〜19:00（最終受付18:15）／土日祝 11:00〜20:00（最終受付19:15）</div>
+              <div class="label">定休日</div>
+              <div>月・火・水（祝日は営業）</div>
+              <div class="label">リンク</div>
+              <div><a href="https://www.benifuji.co.jp/" target="_blank" rel="noopener noreferrer">公式サイト</a> ／ <a href="https://www.google.com/maps/search/?api=1&query=%E7%B4%85%E5%AF%8C%E5%A3%AB%E3%81%AE%E6%B9%AF" target="_blank" rel="noopener noreferrer">Googleマップ</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="acc-item">
+        <button class="acc-button" type="button">
+          <span>
+            <span class="acc-title">予備プラン</span>
+            <span class="acc-sub">到着が遅れた時と、ライトアップまで残る時の分岐です。</span>
+          </span>
+          <span class="arrow">⌄</span>
+        </button>
+        <div class="acc-panel">
+          <div class="route">
+            <strong>到着が15:30を超えたら</strong>
+            <ul>
+              <li>散策は60分前後に圧縮</li>
+              <li>温泉は <strong>ゆらり</strong> か <strong>ふじやま温泉</strong> に絞る</li>
+              <li>食事は温泉館内で済ませる</li>
+            </ul>
+          </div>
+          <div class="route">
+            <strong>ライトアップまで残るなら</strong>
+            <ul>
+              <li>先に温泉へ行かず、桜会場に滞在</li>
+              <li>18時台〜19時台にライトアップを見る</li>
+              <li>その後は遅くまで営業している <strong>ふじやま温泉</strong> が相性良いです</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <p class="footer">
+      参考：富士・河口湖さくら祭り案内、会場案内、各温泉施設公式サイト、無料道路優先ルートの所要時間目安。営業や混雑は当日変動するため、出発前の最終確認推奨です。
+    </p>
+  </div>
+
+  <script>
+    const items = document.querySelectorAll('.acc-item');
+    items.forEach((item) => {
+      const button = item.querySelector('.acc-button');
+      button.addEventListener('click', () => {
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
